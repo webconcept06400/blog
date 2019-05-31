@@ -1,0 +1,11 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': postLoveIts > 0 ,
+                'list-group-item-danger': postLoveIts < 0}">
+                <h4 [ngStyle]="{color: getColor()}" class="col-xs-8">{{  postTitle  }}</h4>
+                <h4 class="col-xs-4">{{  postCreated_at | date : 'dd/MM/yy hh:mm'  }}</h4>
+                <p [ngStyle]="{color: getColor()}">{{  postContent  }}</p>
+                <button class="btn btn-danger"
+              (click)="likeLess()">Don't Like</button> 
+              <button class="btn btn-success"
+              (click)="likePlus()">Like</button>
+</li>
